@@ -41,7 +41,6 @@ class _AddTransactionView extends StatelessWidget {
                         CrossAxisAlignment.stretch,
                     children: [
 
-                      /// NAME
                       TextFormField(
                         decoration: const InputDecoration(
                           labelText: 'Name',
@@ -59,7 +58,6 @@ class _AddTransactionView extends StatelessWidget {
 
                       const SizedBox(height: 16),
 
-                      /// CATEGORY
                       TextFormField(
                         decoration: const InputDecoration(
                           labelText: 'Category',
@@ -77,7 +75,6 @@ class _AddTransactionView extends StatelessWidget {
 
                       const SizedBox(height: 16),
 
-                      /// AMOUNT
                       TextFormField(
                         keyboardType:
                             const TextInputType
@@ -118,7 +115,6 @@ class _AddTransactionView extends StatelessWidget {
 
                       const SizedBox(height: 16),
 
-                      /// DATE PICKER
                       OutlinedButton(
                         onPressed: () async {
                           final picked =
@@ -148,7 +144,6 @@ class _AddTransactionView extends StatelessWidget {
 
                       const SizedBox(height: 24),
 
-                      /// ADD BUTTON
                       ElevatedButton(
                         onPressed: () {
                           if (formKey

@@ -8,28 +8,23 @@ class MainCubit extends Cubit<MainState> {
 
   MainCubit(this.repository) : super(MainState.initial());
 
-  /// Загружает данные из repository
   Future<void> load() async {
     final data = await repository.getAll();
     emit(state.copyWith(transactions: data));
   }
 
-  /// Добавляет транзакцию и синхронизирует состояние
   Future<void> addTransaction(Transaction tx) async {
     await repository.add(tx);
 
-    // 🔥 Перечитываем данные из repository
     final updated = await repository.getAll();
 
     emit(state.copyWith(transactions: updated));
   }
 
-  /// Обновляет поисковый запрос
   void changeQuery(String query) {
     emit(state.copyWith(query: query));
   }
 
-  /// Обновляет фильтр
   void changeFilter(FilterType filter) {
     emit(state.copyWith(filter: filter));
   }

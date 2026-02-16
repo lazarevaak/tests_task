@@ -26,7 +26,7 @@ class TransactionDto {
   factory TransactionDto.fromMap(Map<String, dynamic> map) {
     return TransactionDto(
       name: map['name'] as String,
-      amount: (map['amount'] as num).toDouble(), // 🔥 важно
+      amount: (map['amount'] as num).toDouble(),
       isIncome: map['isIncome'] as bool,
       date: map['date'] as String,
       category: map['category'] as String,
